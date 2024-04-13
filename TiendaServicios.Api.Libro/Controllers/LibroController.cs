@@ -22,7 +22,7 @@ namespace TiendaServicios.Api.Libro.Controllers
             try
             {
                 await _mediator.Send(data);
-                return Ok();
+                return CreatedAtAction(nameof(Crear), data);
             }
             catch (Exception ex)
             {

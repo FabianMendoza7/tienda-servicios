@@ -6,7 +6,6 @@ namespace TiendaServicios.Api.CarritoCompra.Aplicacion
 {
     public class Nuevo
     {
-        //public class Ejecuta: IRequest
         public class Carrito : IRequest
         {
             public DateTime FechaCreacionSesion { get; set; }

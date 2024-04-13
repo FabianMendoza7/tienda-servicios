@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TiendaServicios.Api.Autor.Aplicacion;
+using TiendaServicios.Api.Autor.Helpers;
 
 namespace TiendaServicios.Api.Autor.Controllers
 {
@@ -9,6 +10,7 @@ namespace TiendaServicios.Api.Autor.Controllers
     public class AutorController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly Messages _messages = Global.GetLanguage();
 
         public AutorController(IMediator mediator)
         {
@@ -21,7 +23,8 @@ namespace TiendaServicios.Api.Autor.Controllers
             try
             {
                 await _mediator.Send(data);
-                return Ok();
+                return CreatedAtAction(nameof(Crear), _messages.author_created);
+                //return Ok();
             }
             catch (Exception ex)
             {

@@ -8,10 +8,9 @@ namespace TiendaServicios.Api.Autor.Aplicacion
     public class Nuevo
     {
         // FEMO: siguiendo el patrón CQRS tendremos dos clases:
-        // Ejecuta: para recibir parámetros desde el controlador.
+        // Autor: para recibir parámetros desde el controlador.
         // Nuevo: para crear un nuevo autor.
 
-        //public class Ejecuta: IRequest {
         public class Autor : IRequest
         {
             public required string Nombre { get; set; }
