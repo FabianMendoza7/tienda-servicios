@@ -13,7 +13,7 @@ namespace TiendaServicios.Api.Libro.Tests
     {
         private IEnumerable<LibroMaterial> ObtenerDataPrueba()
         {
-            // Devuelve datos falsos para pruebas.
+            // Devuelve datos falsos para pruebas (usa GenFu).
             A.Configure<LibroMaterial>()
                 .Fill(x => x.Titulo).AsArticleTitle()
                 .Fill(x => x.LibroMaterialId, () => { return Guid.NewGuid(); });
